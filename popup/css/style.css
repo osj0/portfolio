@@ -3,18 +3,29 @@
 h4{font-size: 24px; font-weight: bold;}
 p{font-size: 16px;}
 .bfont{font-weight: bold; font-size: 18px;}
-.iconp{padding-left:20px;position: relative;}
-.iloc:after {content: "";clear: both;display: block;
-    background: #ddd;width: 18px;height: 18px;position: absolute;
-    top: 4px;left: 54px;}
+.date{font-size: 14px;}
+
+/* icon */
+.iconp{padding-left:16px;position: relative; font-size: 14px;}
+.iconp:after {content: "";clear: both;display: block;
+    background: #ddd;width: 16px;height: 16px;position: absolute;
+    top: 2px;left: 0px;}
+.loc:after{background: url(/popup/img/loc.png) no-repeat; background-size: cover;}
 
 .center-tit-bx{text-align: center; margin: 0 auto;}
 
 .main-list{margin: 50px 0;}
 
-.container{margin: 0 auto;
-    max-width: 1440px;
-    min-width: 360px;}
+.container{margin: 0 auto; padding:0 20px;
+    max-width: 1440px;}
+
+/* header */
+.gnb{display: flex;    justify-content: space-between;}
+.logo{}
+.lnb{display: flex;}
+.lnb .menu{}
+.lnb .login{}
+.lnb .search{}
 /* hot */
 .hot-cont-bx{padding:30px 0; display: flex;}
 .hot-cont-item{margin-right:29px; width:20%;}
@@ -22,16 +33,26 @@ p{font-size: 16px;}
 .hcont-txt{padding:10px 0;}
 
 /* comming */
-.com-cont-item{display: flex;border: 1px solid #ccc; border-radius: 10px;width: calc(100% / 4 - 20px);margin-right: 20px;}
-.cimg{    width: 100px; height: 100%; background: #ddd; border-radius: 10px 0 0 10px;}
-.com-cont-txt{padding:10px 20px; width: calc(100% - 100px);}
+.com-cont-item{display: flex;border: 1px solid #ccc; border-radius: 10px;
+    /*width: calc(33.33% - 20px) !important;*/}
+.cimg{    width: 150px; background: #ddd; border-radius: 10px 0 0 10px;}
+.com-cont-txt{padding:20px; width: calc(100% - 150px);}
 .d-day{text-align: right;color: #f00;font-weight: bold;}
 .com-cont-txt .bfont{margin-top: 40px;font-size: 16px;}
 
+.com-cont-Swiper .swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* 여러 줄로 배치 */}
+.com-cont-Swiper .swiper-slide {
+    width: 50%; /* 2열 배치 (한 행에 2개) */
+    box-sizing: border-box;
+    padding: 10px;
+}
+.com-cont-Swiper .hot-cont-bx{flex-direction: row !important;}
 /*region*/
-.region-list{width: 80%; display: flex; margin: 20px auto;}
-.reg-item{width: calc(100% / 11);
-    background-color: #eee;
+.region-list{justify-content: center; display: flex; flex-wrap: wrap;margin-top: 10px;}
+.reg-item{
+    background-color: #eee;    width: 55px; margin-top:10px;
     border-radius: 30px;
     padding: 7px 10px;
     margin-right: 10px;
