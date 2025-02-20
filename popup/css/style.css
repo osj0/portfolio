@@ -1,7 +1,11 @@
-*{margin: 0; padding: 0;}
+*{margin: 0; padding: 0;color:#333; }
 /* font */
 h4{font-size: 24px; font-weight: bold;}
-p{font-size: 16px;}
+p{font-size: 16px;margin:0;}
+img{width: 100%;}
+a{cursor: pointer; width: 100%; color:#333; text-decoration: none;}
+button{background-color: transparent; border: none;}
+
 .bfont{font-weight: bold; font-size: 18px;}
 .date{font-size: 14px;}
 
@@ -20,12 +24,36 @@ p{font-size: 16px;}
     max-width: 1440px;}
 
 /* header */
+#header{ border-bottom: 1px solid #ddd;}
 .gnb{display: flex;    justify-content: space-between;}
-.logo{}
-.lnb{display: flex;}
-.lnb .menu{}
-.lnb .login{}
-.lnb .search{}
+.logo{width: 66px; height: auto; padding: 20px 0;}
+.lnb{display: flex;align-items: center;}
+
+.lnb .menu-icon{border: none; background: #fff;}
+.lnb .search, .lnb .login{margin-right: 10px;width:30px;}
+.nav-item {border-bottom: 1px solid #ddd;  padding: 0 10px;}
+
+.searchbg{ width: 100%;height: 100%; position: fixed;top: 0;
+    left: 0;background: rgba(0, 0, 0, 0.5);z-index: 8;}
+.search-txt-bx{width: 100%;padding:30px 0;background:rgba(255,255,255,0.95);z-index: 9;border-bottom: 1px solid #ddd; 
+position: fixed;top:0; left: 0; display: none;}
+.search-txt-bx.active{display: block;}
+
+.close-bx{text-align: right;margin-bottom:40px;}
+.close-bx .close-btn{border:2px solid #ddd; width: 50px; height: 50px;border-radius: 30px;}
+.search-tit{text-align: center; font-weight: bold;}
+.tinput-bx {display: flex; justify-content: center; margin-top:20px;}
+.tinput-bx .tinput{box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border:none; border-radius: 30px; width: 60%; padding: 0 20px;}
+.serachBtn{background:#ac1253; color: #fff; padding: 10px 20px; border-radius: 10px; margin-left: 20px;}
+
+
+.s-history-bx{display: flex; justify-content: space-between; margin-top:30px;}
+.s-history-bx > div{width: 50%;}
+
+.shistory-txt p{padding:10px 0;}
+.shistory-txt span{font-weight:bold; padding-right:10px;}
+
 /* hot */
 .hot-cont-bx{padding:30px 0; display: flex;}
 .hot-cont-item{margin-right:29px; width:20%;}
