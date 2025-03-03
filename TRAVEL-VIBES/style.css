@@ -1,0 +1,63 @@
+*{padding:0; margin:0;}
+a{color:#333; text-decoration: none; cursor: pointer; width: 100%; display: block;}
+button{background:transparent; border:none; cursor: pointer;}
+img{width: 100%;}
+.container{max-width: 1440px; margin: 0 auto;}
+
+.login-bx{display: flex; justify-content: end;}
+.login-bx a{width: 80px;font-size:14px;text-align: center;padding: 10px 0;}
+
+.gnb-bx{border-bottom:1px solid #aaa;}
+.gnb{display: flex; justify-content: space-between;padding: 30px 0;}
+.logo{}
+.search-bx{width: 60%;text-align: center; position: relative;}
+.searchinput input{padding: 10px;border-radius: 50px;width: 80%;}
+.searchbtn{position: absolute;top: 9px;right: 12%;}
+
+.menu-bx{padding:10px 0;}
+
+
+/* 메인슬라이드 */
+.mainsl-bx{    height: calc(100vh - 186px);}
+.mainsl-item{}
+.mainsl-item .txt{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); text-align: center;color: #fff;}
+
+/* travel search bx */
+.trlsearch-bx{background-color: #eee;position: absolute;width: 80%;    bottom: -18px;
+    left: 11%;z-index: 9;}
+.trlsearch{}
+.trlsearch button{padding: 10px 20px;background: #fff;width: calc(20% - 10px);border-radius: 5px;text-align: left;}
+.trlsearch button span{display: block;}
+
+/* list 나열 */
+.cont{margin-top:50px;}
+.list-bx{display: flex;}
+.list-item{width: calc(20% - 10px); margin-right:10px; margin-top:30px;}
+.list-item:last-child{margin-right:0;}
+.list-img{width: 100%; position: relative; height: 220px;}
+.list-img img{position:absolute; height: 100%;border-radius: 10px;}
+
+.list-card{padding:10px;}
+.list-card .stit{font-size: 14px;color: #aaa;}
+.list-card .tit{font-size: 20px;font-weight: bold;}
+.list-card .hastag{display: flex;}
+.list-card .price{text-align: right;margin-top: 30px;font-weight: bold;}
+
+/* 추천 */
+.rc-cont-bx{background: #eee;padding: 50px 0;}
+.rc-cont{position: relative;}
+.rc-tit{width: 400px; height: 500px;background: #ddd;}
+
+.rc-list{position: absolute;top: 0;right: 0;width: 100%;justify-content: end;}
+.rc-item{}
+.rc-item img{border-radius: 10px 10px 0 0;}
+.rc-item .rc-card{background:#fff;}
+.rc-item:hover .rc-card{position: relative; height: 220px; top:-93px; border-radius: 10px 10px 0 0;}
+@media screen and (max-width:767px){
+    .menu-bx{position: relative;}
+    .menu-bx button{position: absolute; top:-67px; right:20px;}
+}
+@media screen and (min-width:768px){
+    .trlsearch button{width: calc(20% - 10px);}
+
+}
