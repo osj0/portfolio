@@ -22,3 +22,7 @@ gsap.to('.pf02-bx', {
     toggleActions: 'play none none none'  // 스크롤 트리거가 활성화되면 애니메이션 시작
   }
 });
+
+window.onload = function() {
+  window.scrollTo(0, 0);
+};

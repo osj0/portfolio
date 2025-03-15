@@ -52,6 +52,7 @@
   }
 
 /* 기본 스타일 */
+
 body {width: 100%;
     margin: 0;font-family: 'S-CoreDream-3Light';}
 *{padding:0; margin:0; color:#fff;}
@@ -163,7 +164,7 @@ border-radius: 40px;background: #ce4607;padding: 5px 25px;font-size: 12px; z-ind
 .pj-cont{display: flex;justify-content: end; flex-flow: column;align-items: end;width: 100%;}
 .project{display: flex; padding-right: 60px;}
 /* cont4 */
-.cont4{height:100vh; justify-content: space-evenly;}
+.cont4{flex-flow: column;justify-content: center;display: flex;width: 100%;align-items: center;}
 
 
 .compj{height:100vh; width: 100% !important;
@@ -176,6 +177,8 @@ border-radius: 40px;background: #ce4607;padding: 5px 25px;font-size: 12px; z-ind
 .compj-tit .pj-tag{width: 50%;}
 .compj-tit .tit{font-size: 50px;font-weight: bold;text-shadow: 5px 6px 1px rgba(0, 0, 0, 1.0);}
 .pj-cdate{margin-top:10px;}
+.pj-cdate span{font-weight:bold; margin-right:10px;}
+.pj-cdate .txt{font-size:13px; margin-top:10px;}
 .compj-img{width:80%;}
 .compj-img img{width:100%;}
 .sitebtn{    margin-top: 30px;display: flex;}
@@ -193,6 +196,7 @@ border-radius: 40px;background: #ce4607;padding: 5px 25px;font-size: 12px; z-ind
     .compj{    flex-flow: row;}
     .compj-bx{display: flex;flex-flow: column;justify-content: center; height: 100%;}
 .compj-img{width:40%;}
+.mten-item{width: calc(50% - 60px);}
 }
 
 @media (min-width: 1024px) {
