@@ -35,17 +35,46 @@
 /* 추천 */
 .rc-cont-bx{background: #eee;padding: 50px 0;}
 .rc-cont{position: relative;}
-.rc-tit{width: 25%; height: 500px;background: url(../TRAVEL-VIBES/img/trend_bg.png) no-repeat;flex-flow: column;display: flex;justify-content: space-around;}
-.rc-tit .tit{color:#fff;margin: 0 30px;font-weight: bold;font-size: 18px;}
+.rc-tit{width: 100%; height: 500px;background: url(../TRAVEL-VIBES/img/trend_bg.png) no-repeat;flex-flow: column;display: flex;justify-content: space-around;}
+.rc-tit .tit{color:#fff;margin:30px;font-weight: bold;font-size: 18px;}
 
 .rc-tab{display: flex;flex-flow: column; justify-content: center;align-items: center;}
 .rc-tab button{padding: 5px 20px;background: #fff;border-radius: 40px;margin-top: 10px;width: 159px;}
+.rc-tab button:hover{background:#2d8bc3; color:#fff; transition: transform 0.3s ease-in-out;}
 
-.rc-list{position: absolute;top: 0;right: 0;width: 100%;justify-content: end;}
-.rc-item{}
-.rc-item img{border-radius: 10px 10px 0 0;}
-.rc-item .rc-card{background:#fff; transition: 0.3s ease-in-out;}
-.rc-item:hover .rc-card{position: relative; height: 220px; top:-93px; border-radius: 10px 10px 0 0;}
+.rc-list{display:none; position: absolute;top: 63%;right: 0;width: 84%;justify-content: end; transform: translate(0, -50%);}
+.rc-list .list-bx{    justify-content: end;}
+.rc-list .list-img{height: 280px;}
+.rc-list img{border-radius: 10px 10px 0 0;}
+
+.rc-list .rc-card {
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 20px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateY(100%);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.rc-list .list-item {
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden; /* 내용이 튀어나오지 않도록 */
+}
+
+.rc-list .list-item:hover .rc-card {
+    transform: translateY(0);
+    opacity: 1;
+    border-radius: 10px 10px 0 0;
+}
+.re-pag{text-align: right;top: 5px;right: 33px;left: auto;}
+.rc-next{right: 0; }
+.rc-prev{right: 40px; left:inherit;}
+.rc-next, .rc-prev{top:27px; background:#fff;border:1px solid #ddd; border-radius:40px; width:25px; height: 25px;}
+.rc-next:after, .rc-prev:after{ font-size:14px; color:#666; font-weight: bold;}
+
 
 /* 해외 */
 .ftrl .list-item{position: relative;}
@@ -65,7 +94,7 @@
 
 .tak-bx{width: 100%;}
 .tak-bx .list-bx{flex-wrap: wrap;}
-.tak-bx .list-item{display: flex; flex-wrap:wrap; width: 100%;background:#fff; border-radius: 0;}
+.tak-bx .list-item{margin-right:0;display: flex; flex-wrap:wrap; width: 100%;background:#fff; border-radius: 0;}
 .tak-bx .list-img{width: 100%;border-radius: 0;}
 .tak-bx .list-img img{border-radius: 0;}
 .tak-bx .list-card{width: 100%; padding:20px 40px; }
@@ -82,8 +111,23 @@
     .trlsearch .date{width: calc(70% - 10px); margin-right:5px;}
     .trlsearch .per{width: calc(30% - 10px); margin-right:5px;}
     .trlsearch .srch{width: 100%;}
+
+    /* .rc-list{display: flex;margin: 0 47px;} */
+    .rc-list .list-item{margin-top: 50px;}
+}
+@media screen and (min-width:500px){
+    
+    .rc-list .list-item{width: calc(50% - 15px) !important; }
+
+
 }
 @media screen and (min-width:628px){
+    .rc-list{display: block;}
+    .rc-tit{width: 411px; justify-content: start;}
+    .rc-tab{display: flex; flex-flow: row; margin:0px 30px;}
+    .rc-tab button{padding: 8px 20px;background: #fff;border-radius: 40px;margin:15px 10px 0 0;}
+
+
     .fe-bx .list-img{height: 430px;}
 
     .tak-bx .list-item{width: 100%; margin-right:0; height: 210px;}
@@ -91,10 +135,16 @@
     .tak-bx .list-img img{}
     .tak-bx .list-card{width: calc(60% - 60px); padding:20px 30px; }
 }
+@media screen and (min-width:768px){
+    .rc-list .list-item{width: calc(33.33% - 15px) !important;}
+}
 @media screen and (min-width:1024px){
 
     .trlsearch{flex-wrap: wrap;justify-content: space-between;}
     .trlsearch button{padding: 10px 20px; margin: 5px 0;width: calc(20% - 10px);text-align: left;}
+
+    .rc-list .list-item{width: calc(23% - 15px) !important;}
+    .rc-tab{flex-flow: column; align-items: start; margin:103px 30px;}
 
     .fe-tak{justify-content: space-between;}
     .fe-bx{width: 48%;}
