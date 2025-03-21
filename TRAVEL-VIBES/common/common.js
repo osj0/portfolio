@@ -10,6 +10,7 @@ $("#header").load("header.html", function() {
 
         let searchBtn = document.querySelector(".searchinput");
         let searchCont = document.querySelector(".searchpop");
+        let popclBtn = document.querySelector(".popclbtn");
 
         let msearchBtn = document.querySelector(".search");
 
@@ -38,5 +39,11 @@ $("#header").load("header.html", function() {
                 searchCont.style.display = "block";
             });
         }
-    }, 100); // 약간의 지연을 줘서 요소가 렌더링될 시간을 확보
+        if(popclBtn){
+            popclBtn.addEventListener("click", () => {
+                console.log("popclBtn");
+                searchCont.style.display = "none";
+            });
+        }
+    }, 100);
 });

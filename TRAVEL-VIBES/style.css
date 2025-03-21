@@ -13,17 +13,19 @@
 /* 공통 list 나열 */
 .cont{margin-top:50px;}
 .list-bx{display: flex;}
-.list-item{width: calc(20% - 15px); margin-right:15px; margin-top:30px;border-radius: 10px;}
+.list-item{width: calc(20% - 15px); margin:30px 15px 30px 0;border-radius: 10px;}
 .list-item:last-child{margin-right:0;}
 .list-img{width: 100%; position: relative; height: 165px; overflow: hidden;border-radius: 10px 10px 0 0;}
 .list-img img{position:absolute; height: 100%;border-radius: 10px 10px 0 0;transition: all 0.2s linear;}
 
 .list-card{padding:10px;}
 .list-card .stit{font-size: 12px;color: #aaa;}
-.list-card .tit{font-size: 18px;font-weight: bold;}
-.list-card .hastag{display: flex;}
-.list-card .hastag p{font-size:14px;}
+.list-card .tit{font-size: 16px;font-weight: bold;  white-space: nowrap;
+    overflow: hidden;text-overflow: ellipsis;}
+.list-card .hastag{display: flex;flex-wrap: wrap; }
+.list-card .hastag p{font-size:13px;white-space: nowrap; overflow: hidden;text-overflow: ellipsis;}
 .list-item .price{text-align: right; font-size: 16px;font-weight: bold;padding:10px; transition: 0.3s ease-in-out;}
+
 
 /* 국내 */
 .ktrl .list-item{box-shadow:rgba(33, 35, 38, 0.1) 8px 8px 10px -10px; width: 100%;}
@@ -31,6 +33,7 @@
 
 .ktrl .list-item a:hover .list-img img{transform: scale(1.1);}
 .ktrl .list-item a:hover .price{color:#ddd;}
+.swiper-pagination.ktrl-page{bottom:0;}
 
 /* 추천 */
 .rc-cont-bx{background: #eee;padding: 50px 0;}
@@ -39,7 +42,7 @@
 .rc-tit .tit{color:#fff;margin:30px;font-weight: bold;font-size: 18px;}
 
 .rc-tab{display: flex;flex-flow: column; justify-content: center;align-items: center;}
-.rc-tab button{padding: 5px 20px;background: #fff;border-radius: 40px;margin-top: 10px;width: 159px;}
+.rc-tab button{padding: 10px 20px;background: #fff;border-radius: 40px;margin-top: 10px;width: 200px;}
 .rc-tab button:hover{background:#2d8bc3; color:#fff; transition: transform 0.3s ease-in-out;}
 
 .rc-list{display:none; position: absolute;top: 63%;right: 0;width: 84%;justify-content: end; transform: translate(0, -50%);}
@@ -47,28 +50,14 @@
 .rc-list .list-img{height: 280px;}
 .rc-list img{border-radius: 10px 10px 0 0;}
 
-.rc-list .rc-card {
-    background: #fff;
-    position: absolute;
-    bottom: 0;
-    width: calc(100% - 20px);
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    transform: translateY(100%);
-    opacity: 0;
-    will-change: transform, opacity;
+.rc-list .rc-card {background: #fff;position: absolute;bottom: 0;width: calc(100% - 20px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; padding:20px 15px;
+    transform: translateY(100%); opacity: 0; will-change: transform, opacity;
 }
 
-.rc-list .list-item {
-    transition: 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden; /* 내용이 튀어나오지 않도록 */
-}
+.rc-list .list-item {transition: 0.3s ease-in-out;position: relative; overflow: hidden;}
 
-.rc-list .list-item:hover .rc-card {
-    transform: translateY(0);
-    opacity: 1;
-    border-radius: 10px 10px 0 0;
-}
+.rc-list .list-item:hover .rc-card {transform: translateY(0);opacity: 1;border-radius: 10px 10px 0 0;}
 .re-pag{text-align: right;top: 5px;right: 33px;left: auto;}
 .rc-next{right: 0; }
 .rc-prev{right: 40px; left:inherit;}
@@ -124,8 +113,8 @@
 @media screen and (min-width:628px){
     .rc-list{display: block;}
     .rc-tit{width: 411px; justify-content: start;}
-    .rc-tab{display: flex; flex-flow: row; margin:0px 30px;}
-    .rc-tab button{padding: 8px 20px;background: #fff;border-radius: 40px;margin:15px 10px 0 0;}
+    .rc-tab{display: none; flex-flow: row; margin:0px 30px;}
+    /* .rc-tab button{padding: 8px 20px;background: #fff;border-radius: 40px;margin:15px 10px 0 0;} */
 
 
     .fe-bx .list-img{height: 430px;}
@@ -143,8 +132,8 @@
     .trlsearch{flex-wrap: wrap;justify-content: space-between;}
     .trlsearch button{padding: 10px 20px; margin: 5px 0;width: calc(20% - 10px);text-align: left;}
 
-    .rc-list .list-item{width: calc(23% - 15px) !important;}
-    .rc-tab{flex-flow: column; align-items: start; margin:103px 30px;}
+    .rc-list .list-item{width: calc(25% - 15px) !important;}
+    /* .rc-tab{flex-flow: column; align-items: start; margin:103px 30px;} */
 
     .fe-tak{justify-content: space-between;}
     .fe-bx{width: 48%;}
