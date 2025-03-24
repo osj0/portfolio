@@ -1,8 +1,30 @@
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PTAnboR';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/PTAnboR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* 메인슬라이드 */
 .mainsl-bx{    }
 .mainsl-item{height: calc(100vh - 186px); width: 100%; position: relative;}
 .mainsl-item img{position: absolute; top:0; left:0; width: 100%; height: 100%;}
 .mainsl-item .txt{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); text-align: center;color: #fff;}
+/* 메인1 */
+.mainsl-item .tit01{font-family: 'yg-jalnan';font-size:24px; text-shadow: rgb(131 70 70 / 35%) 0px 5px 3px;}
+.mainsl-item .tit01 span{color: #ff6e81;font-size:38px;text-shadow: rgb(255 45 45 / 35%) 0px 3px 1px;}
+.mainsl-item .stit01{font-family: 'yg-jalnan';font-size: 16px; text-shadow: rgb(89 0 0 / 56%) 0px 2px 2px;}
+.utit-bx{margin-top:20px; display: flex; flex-wrap: wrap; justify-content: center;}
+.utit-bx .utit01{font-size:14px; color: #e32f47;}
+/* 메인2 */
+.mainsl-item .tit02{line-height: 56px;font-family: 'PTAnboR';color:transparent;font-size:40px; z-index: 0; position: relative;-webkit-text-stroke: 1px #fff;}
 
 /* 유저선택 */
 .trlsearch-bx{background-color: #edf7fd;padding: 10px 20px;border-radius: 10px;}
@@ -98,7 +120,7 @@
 /* 추천 */
 .rc-cont-bx{background: #eee;padding: 50px 0;}
 .rc-cont{position: relative;}
-.rc-tit{width: 100%; height: 500px;background: url(../TRAVEL-VIBES/img/trend_bg.png) no-repeat;flex-flow: column;display: flex;justify-content: space-around;}
+.rc-tit{width: 100%; height: 500px;background: url(../img/trend_bg.png) no-repeat;flex-flow: column;display: flex;justify-content: space-around;}
 .rc-tit .tit{color:#fff;margin:30px;font-weight: bold;font-size: 18px;}
 
 .rc-tab{display: flex;flex-flow: column; justify-content: center;align-items: center;}
@@ -166,6 +188,8 @@
 }
 
 @media screen and (min-width:628px){
+    .mainsl-item .tit01{font-size:40px}
+    .mainsl-item .tit01 span{font-size:58px}
     /*축제*/
     .rc-list{display: block;}
     .rc-tit{width: 411px; justify-content: start;}
@@ -181,10 +205,18 @@
 }
 @media screen and (min-width:768px){
   
+  
+  .mainsl-item .stit01{font-size: 28px;}
     .rc-list .list-item{width: calc(33.33% - 15px) !important;}
+
 }
 @media screen and (min-width:1024px){
+    .mainsl-item .tit01{font-size:70px;line-height: 80px;}
+    .mainsl-item .tit01 span{font-size:88px}
+    .utit-bx{margin-top:30px;}
+    .utit-bx .utit{font-size:18px;}
 
+    
     .trlsearch .trlbtn{width: calc(25% - 60px);}
 
     .rc-list .list-item{width: calc(25% - 15px) !important;}
