@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <title>Travel Vibes</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./common/common.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     
@@ -47,11 +49,61 @@
                     <button>편도</button>
                 </div>
                 <div class="trlsearch">
-                    <button type="button" class="place"><span>출발지</span>---</button>
-                    <button type="button" class="place"><span>도착지</span>---</button>
-                    <button type="button" class="date"><span>출발일/기간</span>---</button>
-                    <button type="button" class="per"><span>인원</span>---</button>
-                    <button type="button" class="srch"><span>검색</span>---</button>
+                    <div class="trlbtn place">
+                        <div class="se-btn">
+                            <span>출발지</span>
+                            <div class="add-place">
+                                <button class="load-btn trl-user">--</button>
+                                <div class="rebtn-bx">
+                                    <div id="region-buttons" class="region"></div>
+                                    <div id="subregion-buttons" class="subregion"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="se-btn">
+                            <span>도착지</span>
+                            <div class="add-place">
+                                <button class="load-btn trl-user">--</button>
+                                <div class="rebtn-bx">
+                                    <div id="region-buttons" class="region"></div>
+                                    <div id="subregion-buttons" class="subregion"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trlbtn date">
+                        <div id="flight-datepicker" class="fl-trl input-daterange input-group">
+                            <div class="se-btn">
+                                <label>출발일</label>
+                                <input type="text" class="trl-user" id="start-date" name="start" placeholder="--" data-date-format="DD, MM d">
+                            </div>
+                            <div class="se-btn">
+                                <label>도착일</label>
+                                <input type="text" class="trl-user" id="end-date" name="end" placeholder="--" data-date-format="DD, MM d">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="trlbtn">
+                        <p>인원</p>
+                        <div class="per-bx">
+                            <div class="se-btn">
+                                <span>성인</span>
+                                    <button class="">-</button>
+                                    <p>3</p>
+                                    <button class="">+</button>
+                            </div>
+                            <div class="se-btn">
+                                <span>아동</span>
+                                    <button class="">-</button>
+                                    <p>3</p>
+                                    <button class="">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="trlbtn" type="button"><span>검색</span>---</div>
                 </div>
             </div>
         </div>
@@ -349,14 +401,20 @@
         </div>
         <!-- e: 해외여행 -->
    
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./common/common.js"></script>
-    <script src="script.js"></script>
-    <!-- Initialize Swiper -->
-    <script>
 
-    </script>
+          
+         <!-- Moment.js 추가 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <!-- Bootstrap Datepicker -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="./common/common.js"></script>
+        <script src="script.js"></script>
+        
     
 </body>
 </html>

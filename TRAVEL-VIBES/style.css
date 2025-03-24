@@ -4,11 +4,71 @@
 .mainsl-item img{position: absolute; top:0; left:0; width: 100%; height: 100%;}
 .mainsl-item .txt{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); text-align: center;color: #fff;}
 
-/* travel search bx */
+/* 유저선택 */
 .trlsearch-bx{background-color: #edf7fd;padding: 10px 20px;border-radius: 10px;}
 .trlsearch{display: flex; flex-wrap: wrap;}
-.trlsearch button{padding: 10px 20px; margin: 5px 0; background: #fff;border-radius: 5px;text-align: center;}
-.trlsearch button span{display: block;}
+.trlsearch .trlbtn{margin-top: 10px;width: 100%;padding: 10px 25px; background: #fff;border-radius: 5px;text-align: center;}
+.trlsearch .trlbtn:last-child{margin-right:0;}
+.trl-user{padding:7px 0;font-size: 14px; text-align: left;color:#004d9f;width: 100%;}
+
+  /*장소*/
+  .trlbtn.place{display: flex;}
+  .se-btn{width: 50%;text-align: left;font-size: 14px; }
+  .add-place{position: relative;}
+  .rebtn-bx{display: none;    z-index: 9;position: absolute;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  top: 38px;border: 1px solid #eee;    width: 280px;
+  left: 0;
+  background: #fff;}
+  .region-button {display: block;font-size: 14px;width: 110px;padding: 12px 0;border-bottom: 1px solid #eee;}
+  .region-button:last-child{border-bottom:none;}
+  .subregion-button {display: none;font-size: 14px;width: 170px;padding: 10px 0;}
+  .subregion{border-left:1px solid #eee;}
+
+  /* 날짜 */
+  .fl-trl {display: flex;}
+  .fl-trl label {display: block; text-align: left; font-size:14px;}
+
+  .fl-trl input {text-align: left;
+    display: block;width: 100%;background-color: transparent;
+    border: none;border-bottom: 2px solid #ffffff; border-radius: 0;
+    outline: none;transition: border-color 0.2s ease-out;
+  }
+  .fl-trl input::placeholder {color: #004d9f;font-size: 14px;transition: color 0.2s 0.2s ease-out;}
+  .fl-trl input:focus {border-bottom-color: #004d9f;}
+  .fl-trl input:focus::placeholder {color: transparent;transition: color 0.2s ease-out;}
+
+  .datepicker-dropdown:before,.datepicker-dropdown:after{display: none;}
+
+  .datepicker{position: absolute;}
+  .datepicker table {background-color: #fff;box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;}
+  .datepicker table td,
+  .datepicker table th {
+    width: auto;padding: 8px 12px;
+    font-size: 14px;
+    transition: background-color 0.6s ease-out;
+  }
+
+  .datepicker table td:hover,
+  .datepicker table th:hover,
+  .datepicker table .active:hover,
+  .datepicker table .highlighted {
+    background-color: #eee;
+    transition: background-color 0.2s ease-out;
+  }
+  .datepicker table tr td.selected{background: #bbb;}
+  .datepicker table tr td span.active, 
+  .datepicker table tr td.active,
+  .datepicker table tr td.active.active{background:#004d9f;}
+
+  .datepicker table .disabled,
+  .datepicker table .disabled:hover {
+    color: #ccc;
+  }
+
+  /* 인원 */
+  .trlbtn .per-bx{display: flex;}
+  .trlbtn .per-bx .se-btn{display: flex;}
+
 
 /* 공통 list 나열 */
 .cont{margin-top:50px;}
@@ -74,6 +134,7 @@
     height: calc(100% - 20px);display: flex;flex-flow: column; justify-content: end;border-radius: 10px;}
 .ftrl .list-item:hover .list-card{background: rgba(0, 0, 0, 0.4); }
 
+/* 축제 */
 .fe-tak{display: flex; flex-wrap: wrap;}
 .fe-bx{width: 100%;}
 .fe-bx h2{text-align: center;}
@@ -81,6 +142,7 @@
 .fe-bx .list-img{height: 300px; border-radius: 0;}
 .fe-bx .list-img img{border-radius: 0;}
 
+/* 타임어택 */
 .tak-bx{width: 100%;}
 .tak-bx .list-bx{flex-wrap: wrap;}
 .tak-bx .list-item{margin-right:0;display: flex; flex-wrap:wrap; width: 100%;background:#fff; border-radius: 0;}
@@ -96,27 +158,20 @@
 .tak-bx .hastag p{font-size:14px;}
 
 @media screen and (max-width:1023px){
-    .trlsearch .place{width: calc(50% - 10px); margin-right:5px;}
-    .trlsearch .date{width: calc(70% - 10px); margin-right:5px;}
-    .trlsearch .per{width: calc(30% - 10px); margin-right:5px;}
-    .trlsearch .srch{width: 100%;}
-
-    /* .rc-list{display: flex;margin: 0 47px;} */
     .rc-list .list-item{margin-top: 50px;}
 }
+
 @media screen and (min-width:500px){
-    
     .rc-list .list-item{width: calc(50% - 15px) !important; }
-
-
 }
+
 @media screen and (min-width:628px){
+    /*축제*/
     .rc-list{display: block;}
     .rc-tit{width: 411px; justify-content: start;}
     .rc-tab{display: none; flex-flow: row; margin:0px 30px;}
-    /* .rc-tab button{padding: 8px 20px;background: #fff;border-radius: 40px;margin:15px 10px 0 0;} */
 
-
+    .trlsearch .trlbtn{width: calc(50% - 60px);margin-right:10px; }
     .fe-bx .list-img{height: 430px;}
 
     .tak-bx .list-item{width: 100%; margin-right:0; height: 210px;}
@@ -125,15 +180,14 @@
     .tak-bx .list-card{width: calc(60% - 60px); padding:20px 30px; }
 }
 @media screen and (min-width:768px){
+  
     .rc-list .list-item{width: calc(33.33% - 15px) !important;}
 }
 @media screen and (min-width:1024px){
 
-    .trlsearch{flex-wrap: wrap;justify-content: space-between;}
-    .trlsearch button{padding: 10px 20px; margin: 5px 0;width: calc(20% - 10px);text-align: left;}
+    .trlsearch .trlbtn{width: calc(25% - 60px);}
 
     .rc-list .list-item{width: calc(25% - 15px) !important;}
-    /* .rc-tab{flex-flow: column; align-items: start; margin:103px 30px;} */
 
     .fe-tak{justify-content: space-between;}
     .fe-bx{width: 48%;}

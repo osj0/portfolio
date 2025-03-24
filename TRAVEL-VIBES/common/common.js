@@ -3,7 +3,7 @@ $(function(){
     $("#footer").load("footer.html");
 })
 
-$("#header").load("header.html", function() {
+$("#header").load("./common/header.html", function() {
     setTimeout(() => {
         let menuBtn = document.querySelector(".menu");
         let closeBtn = document.querySelector(".closed");
