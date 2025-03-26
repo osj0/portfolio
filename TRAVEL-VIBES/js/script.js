@@ -1,13 +1,9 @@
 //메인 슬라이드
 var swiper = new Swiper(".mainsl-bx", {
-    pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+  // autoplay: {
+  //   delay: 3500,
+  //   disableOnInteraction: false,
+  // },
 });
 
 //cont1 국내
@@ -22,7 +18,7 @@ var swiper = new Swiper(".ktrl", {
     breakpoints: {
       500: {slidesPerView:2,spaceBetween: 20,},
       768: {slidesPerView: 3,spaceBetween: 20,},
-      1024: {slidesPerView: 5,spaceBetween: 20,},
+      1024: {slidesPerView: 4,spaceBetween: 20,},
     }
   });
 
@@ -55,7 +51,7 @@ var swiper = new Swiper(".ftrl", {
     breakpoints: {
       500: {slidesPerView:2,spaceBetween: 20,},
       768: {slidesPerView: 3,spaceBetween: 20,},
-      1024: {slidesPerView: 5,spaceBetween: 20,},
+      1024: {slidesPerView: 4,spaceBetween: 20,},
     }
   });
 //장소
@@ -194,3 +190,19 @@ $(document).ready(function () {
   });
   
 });
+
+let counts = [0, 0]; // 성인, 아동 카운트 배열
+
+        function updateCounter(index) {
+            document.querySelectorAll(".count")[index].innerText = counts[index];
+        }
+
+        function increase(index) {
+            counts[index]++;
+            updateCounter(index);
+        }
+
+        function decrease(index) {
+            if (counts[index] > 0) counts[index]--;
+            updateCounter(index);
+        }

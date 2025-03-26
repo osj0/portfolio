@@ -2,8 +2,10 @@
 *{padding:0; margin:0;}
 a{color:#333; text-decoration: none; cursor: pointer; width: 100%; display: block;}
 button{background:transparent; border:none; cursor: pointer;}
+ul{text-decoration: none;}
+li{list-style: none;}
 img{width: 100%;object-fit: cover;}
-.container{max-width: 1440px; margin: 0 20px;}
+.container{max-width: 1200px; margin: 0 20px;}
 
 /* header */
 .login-bx{display: flex; justify-content: end;}
@@ -63,8 +65,32 @@ img{width: 100%;object-fit: cover;}
 .submn{display: flex;}
 .submn a{padding:15px 0px; font-size:14px;margin: 0 10px; font-weight: bold;}
 
+
+/*footer*/
+
+.ft-util{border-bottom:1px solid #ddd;}
+.ft-util ul{display: flex; flex-wrap: wrap; padding:20px 0 10px;}
+.ft-util ul li{padding: 0 15px 10px 0; font-size: 14px;}
+
+.ft-cont{padding:20px 0;}
+.ft-txt{display: flex; flex-wrap: wrap;  }
+.ft-txt p{font-size: 12px; position: relative; padding:3px 0; margin-right: 10px; padding-right:10px;}
+.ft-txt p:after{content: "";clear: both; display: block;
+    position:absolute; top:6px; right:0; height: 12px; border:1px solid #ddd;}
+.ft-txt p:last-child::after{display: none;}
+
+.ft-cs-info{padding:10px 0;}
+.ft-cs{display: flex; margin-right:20px;}
+.cs-info-bx{font-size:12px;display: flex;flex-wrap: wrap;}
+.cs-info-bx .tit{line-height: 24px;}
+.cs-tel{font-size:16px; font-weight:bold; margin-left:10px;}
+.cs-info{}
+.cs-info p{font-size:12px; color:#aaa;}
+
+.ft-info{padding-bottom:30px;}
+.ft-info p{font-size: 12px;}
 @media screen and (min-width:768px){
-    .container{margin: 0 auto;}
+    .container{margin: 0 auto; padding:0 20px;}
     /* header */
     .search-bx{position: relative; margin:10px 0; width: 50%; display: block;}
     .searchinput{display: block; margin:0 auto; position: relative; padding: 5px 30px 10px;;border-radius: 50px;border: 1px solid #ddd;}

@@ -22,7 +22,7 @@
             <div class="swiper-wrapper mainsl">
               <div class="swiper-slide">
                 <div class="mainsl-item">
-                    <div class="img"><img src="./img/mainsl01.png" class="" alt="...1"></div>
+                    <div class="img"><img src="./img/mainsl01.png" class="" alt="...2"></div>
                     <div class="txt">
                         
                         <p class="tit01"><span>봄</span>이 왔나<span> 봄</span></p>
@@ -39,18 +39,15 @@
                 <div class="mainsl-item">
                     <div class="img"><img src="./img/mainsl02.png" class="" alt="...1"></div>
                     <div class="txt">
-                        <p class="utit">강릉 야간관광지</p>
                         <p class="tit02">밤이 더 아름다운</p>
                         <p class="tit02">빛의 도시</p>
-                        <div class="utit-bx">
-                            <p>4월</p>
-                            <p>기차여행</p>
+                        <div class="utit-bx utit-bx02">
+                            <p class="utit021">4월</p>
+                            <p class="utit022">기차여행</p>
                         </div>
                     </div>
                     <div id="nc-main" class="nc-main bg-cover bg-cc">
-
                         <div class="full-wh">
-                          <!-- STAR ANIMATION -->
                           <div class="bg-animation">
                             <div id='stars'></div>
                             <div id='stars3'></div>
@@ -59,11 +56,28 @@
                     </div>
                 </div>
               </div>
-              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">
+                <div class="mainsl-item">
+                    <div class="img"><img src="./img/mainsl03.png" class="" alt="...3"></div>
+                    <div class="txt">
+                        <p class="tit01">한편의 영화가 시작될</p>
+                        <p class="tit01">상하이 여행</p>
+                        <div class="utit-bx">
+                            <p class="utit">영화 속 즐거움을 느끼고 싶다면</p>
+                            <p class="utit">High Class 단독여행</p>
+                        </div>
+                    </div>
+                    <div id="nc-main" class="nc-main bg-cover bg-cc">
+                        <div class="full-wh">
+                          <div class="bg-animation">
+                            <div id='stars'></div>
+                            <div id='stars3'></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
         </div>
         <!-- s : 출발,도착 검색창 -->
          <div class="cont container">
@@ -75,7 +89,7 @@
                 <div class="trlsearch">
                     <div class="trlbtn place">
                         <div class="se-btn">
-                            <span>출발지</span>
+                            <p class="trl-tit">출발지</p>
                             <div class="add-place">
                                 <button class="load-btn trl-user">--</button>
                                 <div class="rebtn-bx">
@@ -86,7 +100,7 @@
                         </div>
 
                         <div class="se-btn">
-                            <span>도착지</span>
+                            <p class="trl-tit">도착지</p>
                             <div class="add-place">
                                 <button class="load-btn trl-user">--</button>
                                 <div class="rebtn-bx">
@@ -99,35 +113,38 @@
                     <div class="trlbtn date">
                         <div id="flight-datepicker" class="fl-trl input-daterange input-group">
                             <div class="se-btn">
-                                <label>출발일</label>
+                                <label class="trl-tit">출발일</label>
                                 <input type="text" class="trl-user" id="start-date" name="start" placeholder="--" data-date-format="DD, MM d">
                             </div>
                             <div class="se-btn">
-                                <label>도착일</label>
+                                <label class="trl-tit">도착일</label>
                                 <input type="text" class="trl-user" id="end-date" name="end" placeholder="--" data-date-format="DD, MM d">
                             </div>
                         </div>
                     </div>
                     
                     <div class="trlbtn">
-                        <p>인원</p>
                         <div class="per-bx">
                             <div class="se-btn">
                                 <span>성인</span>
-                                    <button class="">-</button>
-                                    <p>3</p>
-                                    <button class="">+</button>
+                                <div class="count-btn">
+                                    <button class="" onclick="decrease(0)">-</button>
+                                    <p class="count">0</p>
+                                    <button class="" onclick="increase(0)">+</button>
+                                </div>
                             </div>
                             <div class="se-btn">
                                 <span>아동</span>
-                                    <button class="">-</button>
-                                    <p>3</p>
-                                    <button class="">+</button>
+                                <div class="count-btn">
+                                    <button class="" onclick="decrease(1)">-</button>
+                                    <p class="count">0</p>
+                                    <button class="" onclick="increase(1)">+</button>
+                                </div>
                             </div>
                         </div>
                         
                     </div>
-                    <div class="trlbtn" type="button"><span>검색</span>---</div>
+                    <div class="trlbtn se-trl" type="button"><span>검색</span></div>
                 </div>
             </div>
         </div>
@@ -417,13 +434,14 @@
                                 </div>
                                 
                             </div>
-                        </div><!-- item2 -->
+                        </div>
                     </div><!-- list-bx -->
                 </div>
             </div>
             
         </div>
         <!-- e: 해외여행 -->
+        <footer id="footer"></footer>
    
 
           
@@ -437,88 +455,10 @@
 
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="./common/common.js"></script>
-        <script src="script.js"></script>
+        <script src="./js/event.js"></script>
+        <script src="./js/script.js"></script>
         <script>
-            // 기본 값 설정
-        const defaults = {
-            speed: 5,
-            maxSize: 15,
-            minSize: 10,
-            newOn: 400
-        };
-        
-        // 벚꽃 영역 크기를 저장할 변수
-        var $wrap = $('.cherry_blossom');
-        let wrapH = $wrap.height();
-        let wrapW = $wrap.width();
-        
-        // 벚꽃 잎 생성
-        const $petal = $('<span class="petal"></span>');
-        
-        // 랜덤 회전 값을 생성하는 함수
-        const getRandomRotate = () => {
-            const rotateX = 360;
-            const rotateY = Math.random() * 60 - 30;
-            const rotateZ = Math.random() * 120 - 30;
-            const translateX = Math.random() * 10 - 5;
-            const translateY = Math.random() * 10 - 10;
-            const translateZ = Math.random() * 15;
-            return `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px)`;
-        };
-        
-        // 무작위 흔들림 애니메이션 배열 생성
-        const randomSwayAnims = [...Array(10)].map(getRandomRotate);
-        
-        // 특정 요소에 흔들림 애니메이션 적용
-        const applySwayAnim = (element) => {
-            const randomSway = randomSwayAnims[Math.floor(Math.random() * randomSwayAnims.length)];
-            element.css('transform', randomSway);
-            setTimeout(() => {
-                applySwayAnim(element);
-            }, 1000);
-        };
-        
-        // 벚꽃 잎 생성 함수
-        const petalGen = () => {
-            setTimeout(requestAnimationFrame, defaults.newOn, petalGen);
-        
-            const petal = $petal.clone();
-            const size = Math.floor(Math.random() * (defaults.maxSize - defaults.minSize + 1)) + defaults.minSize;
-            const startPosLeft = Math.random() * wrapW;
-            const fallTime = (wrapH * 0.1 + Math.random() * 5) / defaults.speed;
-            const horizontalOffset = Math.random() * 2 - 1;
-        
-            // 애니메이션 끝나면 제거
-            petal.on('animationend', () => {
-                petal.remove();
-            }).css({
-                width: size,
-                height: size,
-                left: startPosLeft,
-                position: 'absolute',
-                animation: `fall ${fallTime}s linear`
-            }).appendTo($wrap);
-        
-            // 위치 업데이트 함수
-            const updatePos = () => {
-                petal.css('left', `+=${horizontalOffset}`);
-                requestAnimationFrame(updatePos);
-            };
-        
-            updatePos();
-            applySwayAnim(petal);
-        };
-        
-        // 창 크기가 변경될 때 영역 크기 업데이트
-        $(window).resize(() => {
-            wrapH = $wrap.height();
-            wrapW = $wrap.width();
-        });
-        
-        // 로딩 완료 후 벚꽃 잎 생성 시작
-        $(window).on('load', () => {
-            requestAnimationFrame(petalGen);
-        });
+         
         
           </script>
     
