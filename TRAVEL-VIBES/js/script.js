@@ -1,5 +1,5 @@
 //메인 슬라이드
-var swiper = new Swiper(".mainsl-bx", {
+var swiper1 = new Swiper(".mainsl-bx", {
   // autoplay: {
   //   delay: 3500,
   //   disableOnInteraction: false,
@@ -7,12 +7,12 @@ var swiper = new Swiper(".mainsl-bx", {
 });
 
 //cont1 국내
-var swiper = new Swiper(".ktrl", {
+var swiper2 = new Swiper(".ktrl", {
     slidesPerView: 1,
     spaceBetween: 0,
     freeMode: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: ".ktrl-page",
       clickable: true,
     },
     breakpoints: {
@@ -23,7 +23,7 @@ var swiper = new Swiper(".ktrl", {
   });
 
     //cont2 축제
-var swiper = new Swiper(".rc-list", {
+var swiper3 = new Swiper(".rc-list", {
   slidesPerView: 1,
   spaceBetween: 0,
   freeMode: true,
@@ -40,7 +40,7 @@ var swiper = new Swiper(".rc-list", {
 
 
   //cont3 해외
-var swiper = new Swiper(".ftrl", {
+var swiper4 = new Swiper(".ftrl", {
     slidesPerView: 1,
     spaceBetween: 0,
     freeMode: true,

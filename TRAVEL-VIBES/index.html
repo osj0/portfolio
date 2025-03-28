@@ -60,12 +60,8 @@
                 <div class="mainsl-item">
                     <div class="img"><img src="./img/mainsl03.png" class="" alt="...3"></div>
                     <div class="txt">
-                        <p class="tit01">한편의 영화가 시작될</p>
-                        <p class="tit01">상하이 여행</p>
-                        <div class="utit-bx">
-                            <p class="utit">영화 속 즐거움을 느끼고 싶다면</p>
-                            <p class="utit">High Class 단독여행</p>
-                        </div>
+                        <p class="tit03">한편의 영화가 시작될</p>
+                        <p class="tit03">상하이 여행</p>
                     </div>
                     <div id="nc-main" class="nc-main bg-cover bg-cc">
                         <div class="full-wh">
@@ -83,7 +79,7 @@
          <div class="cont container">
             <div class="trlsearch-bx">
                 <div class="trltab">
-                    <button>왕복</button>
+                    <button class="active">왕복</button>
                     <button>편도</button>
                 </div>
                 <div class="trlsearch">
@@ -116,7 +112,7 @@
                                 <label class="trl-tit">출발일</label>
                                 <input type="text" class="trl-user" id="start-date" name="start" placeholder="--" data-date-format="DD, MM d">
                             </div>
-                            <div class="se-btn">
+                            <div class="se-btn arr">
                                 <label class="trl-tit">도착일</label>
                                 <input type="text" class="trl-user" id="end-date" name="end" placeholder="--" data-date-format="DD, MM d">
                             </div>
@@ -301,7 +297,8 @@
 
         <!-- s: 해외여행 -->
         <div class="cont container">
-            <h2>출발임박!<br> 바로 떠나는 해외여행</h2>
+            <h2 class="ftrl-tit">버킷리스트,</h2>
+            <h2>고민하지말고 떠나자!</h2>
             <div class="swiper ftrl">
                 <div class="swiper-wrapper list-bx">
                     <div class="swiper-slide list-item"><a href="">
@@ -379,58 +376,46 @@
                             <div class="list-img">
                                 <img src="./img/festival01.png" class="card-img-top" alt="...">
                             </div>
-                            <div class="list-card">
-                                <p class="tit">제27회 화개장터 벚꽃축제</p>
-                                <div class="hastag">
-                                    <p>2025.03.28 ~ 2025.03.30</p>
-                                </div>
-                            </div>
                         </div><!-- item1 -->
                         <div class="list-item">
                             <div class="list-img">
-                                <img src="./img/festival01.png" class="card-img-top" alt="...">
-                            </div>
-                            <div class="list-card">
-                                <p class="tit">남해안일주 4일</p>
-                                <div class="hastag">
-                                    <p>2025.03.08 ~ 2025.03.18</p>
-                                </div>
+                                <img src="./img/festival02.png" class="card-img-top" alt="...">
                             </div>
                         </div><!-- item1 -->
                     </div>
                     
                 </div>
                 <div class="tak-bx">
-                    <h2>축제</h2>
+                    <h2>타임어택</h2>
                     <div class="list-bx">
                         <div class="list-item">
                             <div class="list-img">
-                                <img src="./img/domestic01.png" class="card-img-top" alt="...">
+                                <img src="./img/timek01.png" class="card-img-top" alt="...">
                             </div>
                             <div class="list-card">
                                 <p class="timeat"><span>0</span>일 <span> 20:45:45</span> 남았습니다.</p>
                                 <div class="txt">
-                                    <p class="tit">[아시아나]북경 - 전통과 문화의 중심지</p>
+                                    <p class="tit">[제주愛명소] - 우도 3일 단독여행 </p>
                                     <div class="hastag">
-                                        <p>#여수</p><p>#구례</p><p>#거제</p><p>#부산</p>
+                                        <p>#낭만감성여행지</p><p>#맛있는여행</p>
                                     </div>
-                                    <p class="price">1,060,000<span>원 ~</span></p>
+                                    <p class="price">550,000<span>원 ~</span></p>
                                 </div>
                                 
                             </div>
                         </div><!-- item1 -->
                         <div class="list-item">
                             <div class="list-img">
-                                <img src="./img/domestic01.png" class="card-img-top" alt="...">
+                                <img src="./img/timek02.png" class="card-img-top" alt="...">
                             </div>
                             <div class="list-card">
                                 <p class="timeat"><span>0</span>일 <span> 20:45:45</span> 남았습니다.</p>
                                 <div class="txt">
-                                    <p class="tit">[아시아나]북경 - 전통과 문화의 중심지</p>
+                                    <p class="tit">[동유럽 4국9일] - 체코/오스트리아/헝가리/독일</p>
                                     <div class="hastag">
-                                        <p>#여수</p><p>#구례</p><p>#거제</p><p>#부산</p>
+                                        <p>#인솔자동행</p><p>#프라하</p><p>#할슈타트</p>
                                     </div>
-                                    <p class="price">1,060,000<span>원 ~</span></p>
+                                    <p class="price">3,099,000<span>원 ~</span></p>
                                 </div>
                                 
                             </div>
@@ -458,9 +443,30 @@
         <script src="./js/event.js"></script>
         <script src="./js/script.js"></script>
         <script>
-         
-        
-          </script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const roundTripBtn = document.querySelector(".trltab button:nth-child(1)"); // 왕복 버튼
+                const oneWayBtn = document.querySelector(".trltab button:nth-child(2)"); // 편도 버튼
+                const endDateInput = document.getElementById("end-date"); // 도착일 입력란
+                const arrTxt = document.querySelector(".arr"); // 도착일 입력란
+
+                oneWayBtn.addEventListener("click", function () {
+                    endDateInput.value = ""; // 값 초기화
+                    endDateInput.disabled = true; // 입력 비활성화
+                    arrTxt.classList.add("duisabled-label")
+                    endDateInput.classList.add("disabled-input"); // 스타일 추가
+                    oneWayBtn.classList.add("active");
+                    roundTripBtn.classList.remove("active");
+                });
+
+                roundTripBtn.addEventListener("click", function () {
+                    endDateInput.disabled = false; // 입력 활성화
+                    endDateInput.classList.remove("disabled-input"); // 스타일 제거
+                    arrTxt.classList.remove("duisabled-label")
+                    roundTripBtn.classList.add("active");
+                    oneWayBtn.classList.remove("active");
+                });
+            });
+            </script>
     
 </body>
 </html>
