@@ -3,13 +3,29 @@
 /* 기본 스타일 */
 .portfolio{background:#1C1B21;}
 .inner{padding:70px 30px;}
-.pf02{margin-top: 40px;}
+.waves-bx{width: 100%;}
 
-/* .pf03-bx{height: 100vh;position: sticky;top: 0;} */
+/* loading */
+.loading_bx { position: fixed;left: 0;top: 0;width: 100%;height: 100%;
+  display: flex;justify-content: center;align-items: center; background-color: #000;z-index: 10;}
+
+.loading {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%) scale(2);transition: all 1s ease-in-out;}
+.loading p {color: #fff; font-size: 45px;display: flex;gap: 10px;opacity: 0;justify-content: center;animation: fadeIn 0.8s forwards;}
+
+.loading_bx.small {position: absolute; background: transparent;}
+.loading_bx.small .loading {top: 30px; left: 30px;transform: translate(0, 0) scale(1);}
+.loading_bx.small .loading p {font-size: 14px;display: block;}
+
+
 /* title */
-.pf01-bx{background:url(../img/pj-bg01.png) no-repeat; background-attachment:fixed;}
-.pf01{display: flex; flex-flow: column;justify-content: space-between;
-  align-items: start;height: calc(100vh - 140px);}
+.pf01{display: flex;justify-content: center;
+  align-items: center;height: calc(100vh - 140px);}
+.main-bx {position:relative;text-align:center;
+  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(16,16,16,1) 100%);
+}
+.main {display: flex;justify-content: center;align-items: center;text-align: center;}
+.waves {position:relative;width: 100%;height:15vh;margin-bottom:-7px; min-height:100px;max-height:150px;}
+
 .stit{font-size:30px;text-align: center;width: 100%;line-height: 50px;}
 
 .Title-mask {display: block;position: relative;text-align: start;overflow: hidden;}
@@ -25,20 +41,19 @@
 
 
 /* cont2 aboutme*/
-.pf-img-bx{display: flex;justify-content: center;align-items: center;flex-flow: column;}
-
-.pf-img img{width: 200px;border-radius: 10px;}
+.pf02-bx{height: 100vh;display: flex; flex-flow: column; justify-content: center; align-items: center;}
+.pf02-bx h2{font-size: 14px;}
 
 .pf-hastage{display: flex; margin-top:10px;}
 .pf-hastage p{margin-right:5px;}
 .pf-hastage p:last-child{margin-right:0px;}
 
-.abm_cont_bx{margin-top:30px;}
-.abm_cont{margin-top:30px;background: #ddd;border-radius: 10px;padding: 20px 25px; }
-.abm_cont:first-child{margin-top:0px;}
-.abm_cont h3{color:#7157F9;}
-.abm_cont p{color:#1C1B21; margin-top:10px;} 
+.abm_cont_bx{border-top:1px solid #eee; border-bottom:1px solid #eee; padding:20px 0; margin:20px 0;}
+.abm_cont h3{font-size:35px; color:#7157F9;}
+.abm_cont .txt{margin-top:30px;}
+.abm_cont .txt p{margin-top:10px;}
 
+.abm-q{margin-top:30px; font-size:20px;}
 
 /* project */
 .compj{height:100vh; width: 100%; flex-flow: column;display: flex;justify-content: space-evenly; align-items: center;}
@@ -69,7 +84,10 @@
 
 .compj-img{width:80%;}
 .compj-img img{width:100%;}
-
+/* 개인 pten-item */
+.pten-item{display: flex;}
+.pten-item .compj-img, .pten-item .pj-cont{width: 50%;}
+.pten-item .pj-cont span {font-size: 18px;}
 /* 유지보수 */
 .mten-bx{margin-top: 30px; display:flex; flex-wrap: wrap;}
 .mten-item{width: 100%; margin:10px; position: relative;background: rgb(139 139 139 / 50%);padding: 20px;border-radius: 10px;}
@@ -94,29 +112,24 @@ border-radius: 40px;background: #ce4607;padding: 5px 25px;font-size: 12px; z-ind
   .tag-bx .tag.re{background: #001481;}
 
 /* cont4 */
-/* .cont4{flex-flow: column;justify-content: center;display: flex;width: 100%;align-items: center;} */
+.pf-end-bx{height: 100vh;}
+.pf-end-bx .waves{transform: rotateX(180deg);}
 
+.pf-end-bx .main{height: calc(100% - 142px);}
+.pf-end{flex-flow: column;justify-content: center;display: flex;width: 100%;align-items: center;}
+
+.pf-end .contact{    text-align: right;position: absolute;right: 40px;bottom: 50px;}
 @media (min-width: 768px) {
-    
-
-    .compj{    flex-flow: row;}
-    .compj-bx{display: flex;flex-flow: column;justify-content: center; height: 100%;}
-.compj-img{width:40%;}
-.mten-item{width: calc(50% - 60px);}
+  .compj{    flex-flow: row;}
+  .compj-bx{display: flex;flex-flow: column;justify-content: center; height: 100%;}
+  .compj-img{width:40%;}
+  .mten-item{width: calc(50% - 60px);}
 }
 
 @media (min-width: 1024px) {
 
     /* 공통 */
-    /* .cont{height:100vh; display: flex;align-items: center;} */
-    .pf02{display:flex;justify-content: right;flex-wrap: wrap;}
     .inner{width: 1440px; margin: 0 auto;}
-
-    
-    /* about me */
-    .pf-img-bx{width: 50%;}
-    .pf-img img{width: 300px;border-radius: 10px;}
-    .abm_cont_bx{margin-top:0px; width: calc(50% - 120px); padding:0 60px}
 
     .compj-bx{width: 30%;}
 
