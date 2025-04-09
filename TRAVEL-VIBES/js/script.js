@@ -1,33 +1,29 @@
 //메인 슬라이드
-var swiper = new Swiper(".mainsl-bx", {
-    pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+var swiper1 = new Swiper(".mainsl-bx", {
+  // autoplay: {
+  //   delay: 3500,
+  //   disableOnInteraction: false,
+  // },
 });
 
 //cont1 국내
-var swiper = new Swiper(".ktrl", {
+var swiper2 = new Swiper(".ktrl", {
     slidesPerView: 1,
     spaceBetween: 0,
     freeMode: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: ".ktrl-page",
       clickable: true,
     },
     breakpoints: {
       500: {slidesPerView:2,spaceBetween: 20,},
       768: {slidesPerView: 3,spaceBetween: 20,},
-      1024: {slidesPerView: 5,spaceBetween: 20,},
+      1024: {slidesPerView: 4,spaceBetween: 20,},
     }
   });
 
     //cont2 축제
-var swiper = new Swiper(".rc-list", {
+var swiper3 = new Swiper(".rc-list", {
   slidesPerView: 1,
   spaceBetween: 0,
   freeMode: true,
@@ -44,7 +40,7 @@ var swiper = new Swiper(".rc-list", {
 
 
   //cont3 해외
-var swiper = new Swiper(".ftrl", {
+var swiper4 = new Swiper(".ftrl", {
     slidesPerView: 1,
     spaceBetween: 0,
     freeMode: true,
@@ -55,7 +51,7 @@ var swiper = new Swiper(".ftrl", {
     breakpoints: {
       500: {slidesPerView:2,spaceBetween: 20,},
       768: {slidesPerView: 3,spaceBetween: 20,},
-      1024: {slidesPerView: 5,spaceBetween: 20,},
+      1024: {slidesPerView: 4,spaceBetween: 20,},
     }
   });
 //장소
@@ -194,3 +190,19 @@ $(document).ready(function () {
   });
   
 });
+
+let counts = [0, 0]; // 성인, 아동 카운트 배열
+
+        function updateCounter(index) {
+            document.querySelectorAll(".count")[index].innerText = counts[index];
+        }
+
+        function increase(index) {
+            counts[index]++;
+            updateCounter(index);
+        }
+
+        function decrease(index) {
+            if (counts[index] > 0) counts[index]--;
+            updateCounter(index);
+        }
