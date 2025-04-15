@@ -191,6 +191,33 @@ $(document).ready(function () {
   
 });
 
+
+//도착일
+document.addEventListener("DOMContentLoaded", function () {
+  const roundTripBtn = document.querySelector(".trltab button:nth-child(1)"); // 왕복 버튼
+  const oneWayBtn = document.querySelector(".trltab button:nth-child(2)"); // 편도 버튼
+  const endDateInput = document.getElementById("end-date"); // 도착일 입력란
+  const arrTxt = document.querySelector(".arr"); // 도착일 입력란
+
+  oneWayBtn.addEventListener("click", function () {
+      endDateInput.value = ""; // 값 초기화
+      endDateInput.disabled = true; // 입력 비활성화
+      arrTxt.classList.add("duisabled-label")
+      endDateInput.classList.add("disabled-input"); // 스타일 추가
+      oneWayBtn.classList.add("active");
+      roundTripBtn.classList.remove("active");
+  });
+
+  roundTripBtn.addEventListener("click", function () {
+      endDateInput.disabled = false; // 입력 활성화
+      endDateInput.classList.remove("disabled-input"); // 스타일 제거
+      arrTxt.classList.remove("duisabled-label")
+      roundTripBtn.classList.add("active");
+      oneWayBtn.classList.remove("active");
+  });
+});
+
+
 let counts = [0, 0]; // 성인, 아동 카운트 배열
 
         function updateCounter(index) {
@@ -206,3 +233,47 @@ let counts = [0, 0]; // 성인, 아동 카운트 배열
             if (counts[index] > 0) counts[index]--;
             updateCounter(index);
         }
+
+
+//타임어택
+ const targetDate1 = new Date("2025-05-01T00:00:00Z");
+ const targetDate2 = new Date("2025-04-26T00:00:00Z");
+
+ function updateCountdown() {
+     const now = new Date();
+     
+     // 첫 번째 타임어택
+     const timeDifference1 = targetDate1 - now;
+     if (timeDifference1 <= 0) {
+         document.getElementById("timeRemaining1").textContent = "00:00:00";
+         document.getElementById("daysRemaining1").textContent = "0";
+     } else {
+         const days1 = Math.floor(timeDifference1 / (1000 * 60 * 60 * 24));
+         const hours1 = Math.floor((timeDifference1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+         const minutes1 = Math.floor((timeDifference1 % (1000 * 60 * 60)) / (1000 * 60));
+         const seconds1 = Math.floor((timeDifference1 % (1000 * 60)) / 1000);
+         document.getElementById("daysRemaining1").textContent = days1;
+         document.getElementById("timeRemaining1").textContent = `${padZero(hours1)}:${padZero(minutes1)}:${padZero(seconds1)}`;
+     }
+
+     // 두 번째 타임어택
+     const timeDifference2 = targetDate2 - now;
+     if (timeDifference2 <= 0) {
+         document.getElementById("timeRemaining2").textContent = "00:00:00";
+         document.getElementById("daysRemaining2").textContent = "0";
+     } else {
+         const days2 = Math.floor(timeDifference2 / (1000 * 60 * 60 * 24));
+         const hours2 = Math.floor((timeDifference2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+         const minutes2 = Math.floor((timeDifference2 % (1000 * 60 * 60)) / (1000 * 60));
+         const seconds2 = Math.floor((timeDifference2 % (1000 * 60)) / 1000);
+         document.getElementById("daysRemaining2").textContent = days2;
+         document.getElementById("timeRemaining2").textContent = `${padZero(hours2)}:${padZero(minutes2)}:${padZero(seconds2)}`;
+     }
+ }
+
+ setInterval(updateCountdown, 1000);
+ updateCountdown();
+
+ function padZero(num) {
+     return num < 10 ? "0" + num : num;
+ }
