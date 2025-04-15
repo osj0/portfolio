@@ -93,6 +93,7 @@
                                 <div class="rebtn-bx">
                                     <div id="region-buttons" class="region"></div>
                                     <div id="subregion-buttons" class="subregion"></div>
+                                    <div id="country-list" class="countries"></div>
                                 </div>
                             </div>
                         </div>
@@ -374,28 +375,33 @@
                 <div class="fe-bx">
                     <h2>축제</h2>
                     <div class="list-bx">
-                        <div class="list-item">
+                        <div class="list-item"><a href="#">
                             <div class="list-img">
                                 <img src="./img/festival01.png" class="card-img-top" alt="...">
                             </div>
-                        </div><!-- item1 -->
-                        <div class="list-item">
+                        </a></div><!-- item1 -->
+                        <div class="list-item"><a href="#">
                             <div class="list-img">
                                 <img src="./img/festival02.png" class="card-img-top" alt="...">
                             </div>
-                        </div><!-- item1 -->
+                        </a></div><!-- item1 -->
                     </div>
                     
                 </div>
                 <div class="tak-bx">
-                    <h2>타임어택</h2>
+                    <div class="tak-tit">
+                        <div class="tak-img"><img src="./img/tit05.png" alt=""></div>
+                        <h2>타임어택</h2>
+                    </div>
                     <div class="list-bx">
                         <div class="list-item">
                             <div class="list-img">
                                 <img src="./img/timek01.png" class="card-img-top" alt="...">
                             </div>
-                            <div class="list-card">
-                                <p class="timeat"><span>0</span>일 <span> 20:45:45</span> 남았습니다.</p>
+                            <div class="list-card"><a href="">
+                                <p class="timeat">
+                                    <span id="daysRemaining1">0</span>일 <span id="timeRemaining1">00:00:00</span>
+                                </p>
                                 <div class="txt">
                                     <p class="tit">[제주愛명소] - 우도 3일 단독여행 </p>
                                     <div class="hastag">
@@ -404,14 +410,16 @@
                                     <p class="price">550,000<span>원 ~</span></p>
                                 </div>
                                 
-                            </div>
+                            </div></a>
                         </div><!-- item1 -->
                         <div class="list-item">
                             <div class="list-img">
                                 <img src="./img/timek02.png" class="card-img-top" alt="...">
                             </div>
-                            <div class="list-card">
-                                <p class="timeat"><span>0</span>일 <span> 20:45:45</span> 남았습니다.</p>
+                            <div class="list-card"><a href="">
+                                <p class="timeat">
+                                    <span id="daysRemaining2">0</span>일 <span id="timeRemaining2">00:00:00</span>
+                                </p>
                                 <div class="txt">
                                     <p class="tit">[동유럽 4국9일] - 체코/오스트리아/헝가리/독일</p>
                                     <div class="hastag">
@@ -420,7 +428,7 @@
                                     <p class="price">3,099,000<span>원 ~</span></p>
                                 </div>
                                 
-                            </div>
+                            </a></div>
                         </div>
                     </div><!-- list-bx -->
                 </div>
@@ -433,7 +441,7 @@
         <div class="container">
           <div class="cs-inner justify-content-between">
             <div class="cs-item cs-item1">
-              <h3>SJ투어닷컴 고객센터</h3>
+              <h3>Travel Vibes</h3>
               <div class="txta">
                 <span>1577-1234</span>
                 <div>
@@ -499,30 +507,8 @@
         <script src="./js/event.js"></script>
         <script src="./js/script.js"></script>
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const roundTripBtn = document.querySelector(".trltab button:nth-child(1)"); // 왕복 버튼
-                const oneWayBtn = document.querySelector(".trltab button:nth-child(2)"); // 편도 버튼
-                const endDateInput = document.getElementById("end-date"); // 도착일 입력란
-                const arrTxt = document.querySelector(".arr"); // 도착일 입력란
-
-                oneWayBtn.addEventListener("click", function () {
-                    endDateInput.value = ""; // 값 초기화
-                    endDateInput.disabled = true; // 입력 비활성화
-                    arrTxt.classList.add("duisabled-label")
-                    endDateInput.classList.add("disabled-input"); // 스타일 추가
-                    oneWayBtn.classList.add("active");
-                    roundTripBtn.classList.remove("active");
-                });
-
-                roundTripBtn.addEventListener("click", function () {
-                    endDateInput.disabled = false; // 입력 활성화
-                    endDateInput.classList.remove("disabled-input"); // 스타일 제거
-                    arrTxt.classList.remove("duisabled-label")
-                    roundTripBtn.classList.add("active");
-                    oneWayBtn.classList.remove("active");
-                });
-            });
-            </script>
+            
+        </script>
     
 </body>
 </html>
