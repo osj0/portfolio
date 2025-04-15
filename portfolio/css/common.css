@@ -51,7 +51,7 @@
     to   { opacity: 1; transform: translate(0%, 0%) matrix(1, 0, 0, 1, 0, 0); }
   }
 
-body {width: 100%; margin: 0;font-family: 'S-CoreDream-3Light';}
+body {width: 100%; margin: 0;font-family: 'S-CoreDream-3Light';overflow-x: hidden;}
 *{padding:0; margin:0; color:#fff;}
 a{text-decoration: none;    height: 100%; width: 100%; display: block;}
 ul{list-style: none;}
