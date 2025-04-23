@@ -66,11 +66,11 @@ animation-delay: 3.8s;}
 
 .pj-tit{text-align: center;font-size: 50px;font-weight: bold;text-shadow: 5px 6px 1px rgba(0, 0, 0, 1.0);}
 
-.compj01{background: url(/portfolio/img/pj-bg01.png) no-repeat; background-attachment:fixed;}
-.compj02{background: url(/portfolio/img/pj-bg02.png) no-repeat; background-attachment:fixed;}
-.compj03{background: url(/portfolio/img/pj-bg03.png) no-repeat; background-attachment:fixed;background-position: center;}
-.compj04{background: url(/portfolio/img/pj-bg04.png) no-repeat; background-attachment:fixed;}
-.compj05{background: url(/portfolio/img/pj-bg05.png) no-repeat; background-attachment:fixed;}
+.compj01{background: url(../img/pj-bg01.png) no-repeat; background-attachment:fixed;}
+.compj02{background: url(../img/pj-bg02.png) no-repeat; background-attachment:fixed;}
+.compj03{background: url(../img/pj-bg03.png) no-repeat; background-attachment:fixed;background-position: center;}
+.compj04{background: url(../img/pj-bg04.png) no-repeat; background-attachment:fixed;}
+.compj05{background: url(../img/pj-bg05.png) no-repeat; background-attachment:fixed;}
 
 .pj-tag{margin: 0 auto; width: 190px;text-align: center; border-radius: 30px;padding: 5px 0px;font-size: 14px;}
 .pj-tag.pj-tag01{background:#28a7e1;}
