@@ -4,8 +4,12 @@ window.addEventListener('load', () => {
 
 
 setTimeout(() => {
-    document.querySelector('.sloading_bx').classList.add('fade-out');
-    document.querySelector('.main-bx').style.opacity = '1';
-    document.querySelector('.main-bx').style.pointerEvents = 'auto';
-  }, 4800); // 4.8초 뒤 전환 (애니메이션 흐름에 맞춰 조정 가능)
+  const loadingBox = document.querySelector('.sloading_bx');
+  const mainBox = document.querySelector('.main-bx');
 
+  loadingBox.classList.add('fade-out');
+  loadingBox.style.pointerEvents = 'none'; // ✅ 클릭 통과 처리
+
+  mainBox.style.opacity = '1';
+  mainBox.style.pointerEvents = 'auto';
+}, 5100);
