@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>Travel Vibes</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./common/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/event.css">
+
+
+</head>
+<body>
+    
+    <div class="wrap">
+        <header id="header"></header>
+
+        <div class="swiper mainsl-bx">
+            <div class="swiper-wrapper mainsl">
+              <div class="swiper-slide">
+                <div class="mainsl-item">
+                    <div class="img"><img src="./img/mainsl01.png" class="" alt="...2"></div>
+                    <div class="txt">
+                        
+                        <p class="tit01"><span>봄</span>이 왔나<span> 봄</span></p>
+                        <p class="stit01">준/비/완/료</p>
+                        <div class="utit-bx">
+                            <p class="utit01">향긋한 꽃내음이 가득한</p>
+                            <p class="utit01"> 봄소풍에 초대합니다</p>
+                        </div>
+                    </div>
+                    <div class="cherry_blossom"></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="mainsl-item">
+                    <div class="img"><img src="./img/mainsl02.png" class="" alt="...1"></div>
+                    <div class="txt">
+                        <p class="tit02">밤이 더 아름다운</p>
+                        <p class="tit02">빛의 도시</p>
+                        <div class="utit-bx utit-bx02">
+                            <p class="utit021">4월</p>
+                            <p class="utit022">기차여행</p>
+                        </div>
+                    </div>
+                    <div id="nc-main" class="nc-main bg-cover bg-cc">
+                        <div class="full-wh">
+                          <div class="bg-animation">
+                            <div id='stars'></div>
+                            <div id='stars3'></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="mainsl-item">
+                    <div class="img"><img src="./img/mainsl03.png" class="" alt="...3"></div>
+                    <div class="txt">
+                        <p class="tit03">한편의 영화가 시작될</p>
+                        <p class="tit03">상하이 여행</p>
+                    </div>
+                    <div id="nc-main" class="nc-main bg-cover bg-cc">
+                        <div class="full-wh">
+                          <div class="bg-animation">
+                            <div id='stars'></div>
+                            <div id='stars3'></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- s : 출발,도착 검색창 -->
+         <div class="cont container">
+            <div class="trlsearch-bx">
+                <div class="trltab">
+                    <button class="active">왕복</button>
+                    <button>편도</button>
+                </div>
+                <div class="trlsearch">
+                    <div class="trlbtn place">
+                        <div class="se-btn">
+                            <p class="trl-tit">출발지</p>
+                            <div class="add-place">
+                                <button class="load-btn trl-user">--</button>
+                                <div class="rebtn-bx">
+                                    <div id="region-buttons" class="region"></div>
+                                    <div id="subregion-buttons" class="subregion"></div>
+                                    <div id="country-list" class="countries"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="se-btn">
+                            <p class="trl-tit">도착지</p>
+                            <div class="add-place">
+                                <button class="load-btn trl-user">--</button>
+                                <div class="rebtn-bx">
+                                    <div id="region-buttons" class="region"></div>
+                                    <div id="subregion-buttons" class="subregion"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trlbtn date">
+                        <div id="flight-datepicker" class="fl-trl input-daterange input-group">
+                            <div class="se-btn">
+                                <label class="trl-tit">출발일</label>
+                                <input type="text" class="trl-user" id="start-date" name="start" placeholder="--" data-date-format="DD, MM d">
+                            </div>
+                            <div class="se-btn arr">
+                                <label class="trl-tit">도착일</label>
+                                <input type="text" class="trl-user" id="end-date" name="end" placeholder="--" data-date-format="DD, MM d">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="trlbtn">
+                        <div class="per-bx">
+                            <div class="se-btn">
+                                <span>성인</span>
+                                <div class="count-btn">
+                                    <button class="" onclick="decrease(0)">-</button>
+                                    <p class="count">0</p>
+                                    <button class="" onclick="increase(0)">+</button>
+                                </div>
+                            </div>
+                            <div class="se-btn">
+                                <span>아동</span>
+                                <div class="count-btn">
+                                    <button class="" onclick="decrease(1)">-</button>
+                                    <p class="count">0</p>
+                                    <button class="" onclick="increase(1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="trlbtn se-trl" type="button"><span>검색</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- e : 출발,도착 검색창 -->
+
+        <!-- s: 출발임박 -->
+        <div class="cont container">
+            <h2>출발임박!<br> 바로 떠나는 국내여행</h2>
+            <div class="swiper ktrl">
+                <div class="swiper-wrapper list-bx">
+                    <div class="swiper-slide list-item"><a href="">
+                        <div class="list-img">
+                            <img src="./img/domestic01.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="list-card">
+                            <p class="stit">봄꽃여행</p>
+                            <p class="tit">[부자기운가득!]경상도 의령 하동 구례 1박2일</p>
+                            <div class="hastag">
+                                <p>#섬지강매화마을</p><p>#구례산수유마을</p>
+                            </div>
+                        </div>
+                        <p class="price">135,900<span>원 ~</span></p>
+                    </a></div><!-- item1 -->
+                    <div class="swiper-slide list-item"><a href="">
+                        <div class="list-img">
+                            <img src="./img/domestic02.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="list-card">
+                            <p class="stit">제주를봄봄</p>
+                            <p class="tit">제주도 가파도 4일 &lt;노옵션/미디어아트/곶자왈/관광급/티웨이 &gt;</p>
+                            <div class="hastag">
+                                <p>#유채꽃</p><p>#청보리</p>
+                            </div>
+                        </div>
+                        <p class="price">249,900<span>원 ~</span></p>
+                    </a></div><!-- item2 -->
+                    <div class="swiper-slide list-item"><a href="">
+                        <div class="list-img">
+                            <img src="./img/domestic03.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="list-card">
+                            <p class="stit">경상도 대표 여행지</p>
+                            <p class="tit">부산,울산 1박2일 국제미항인 부산의 명소!</p>
+                            <div class="hastag">
+                                <p>#마린시티</p><p>#해운대</p><p>#간절곶</p>
+                            </div>
+                        </div>
+                        <p class="price">269,900<span>원 ~</span></p>
+                    </a></div><!-- item3 -->
+                    <div class="swiper-slide list-item"><a href="">
+                        <div class="list-img">
+                            <img src="./img/domestic04.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="list-card">
+                            <p class="stit">한려수도 구석구석석</p>
+                            <p class="tit">&lt;2박3일&gt; 한려수도 외도 밀양 남해 여수</p>
+                            <div class="hastag">
+                                <p>#외도보타니아</p><p>#독일마을</p><p>#오동도</p>
+                            </div>
+                        </div>
+                        <p class="price">409,900<span>원 ~</span></p>
+                    </a></div><!-- item4 -->
+                    <div class="swiper-slide list-item"><a href="">
+                        <div class="list-img">
+                            <img src="./img/domestic05.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="list-card">
+                            <p class="stit">아름다운 국가숲길 1호</p>
+                            <p class="tit">[서울출발] 강원도 양구 트레킹 당일여행</p>
+                            <div class="hastag">
+                                <p>#DMZ펀치볼둘레길</p><p>#트레킹</p><p>#한반도섬</p>
+                            </div>
+                        </div>
+                        <p class="price">35,900<span>원 ~</span></p>
+                    </a></div><!-- item5 -->
+                </div>
+                <div class="swiper-pagination ktrl-page"></div>
+              </div>
+        </div>
+        <!-- e: 출발임박 -->
+
+        <!-- s: 추천여행 -->
+        <div class="cont rc-cont-bx">
+            <div class="container rc-cont" >
+                <div class="rc-tit">
+                    <p class="tit">언제가든<br>질리지 않는 여행<br>
+                    Vibes가 추천해줄게</p>
+                    <div class="rc-tab">
+                        <button>SPRING SEASON</button>
+                        <button>WINTER TRIP</button>
+                        <button>SEA-REAL</button>
+                        <button>NIGHT VIEW</button>
+                    </div>
+                </div> 
+               
+                <div class="swiper rc-list">
+                    <div class="swiper-wrapper list-bx">
+                        <div class="swiper-slide list-item">
+                            <a href="#">
+                                <div class="list-img"><img src="./img/theme01.png" class="card-img-top" alt="..."></div>
+                                <div class="list-card rc-card">
+                                    <p class="stit">SPRING SEASON</p>
+                                    <p class="tit">HELLO FLOWER</p>
+                                    <div class="hastag">
+                                        <p>따뜻한 봄처럼 향긋한 꽃처럼 새로운 봄을 맞이해보세요.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div><!-- item1 -->
+                        <div class="swiper-slide list-item">
+                            <a href="#">
+                                <div class="list-img"><img src="./img/theme02.png" class="card-img-top" alt="..."></div>
+                                <div class="list-card rc-card">
+                                    <p class="stit">WINTER TRIP</p>
+                                    <p class="tit">눈꽃투어 겨울여행</p>
+                                    <div class="hastag">
+                                        <p>아이슬란드 일주 - 요쿨살론빙하체험, 블루라군 온천 즐기기</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div><!-- item2 -->
+                        <div class="swiper-slide list-item">
+                            <a href="#">
+                                <div class="list-img"><img src="./img/theme03.png" class="card-img-top" alt="..."></div>
+                                <div class="list-card rc-card">
+                                    <p class="stit">SEA-REAL</p>
+                                    <p class="tit">이번 정류장은 씨리얼</p>
+                                    <div class="hastag">
+                                        <p>오늘부터 여름밤, 무더위를 날려줄 바다투어 가자</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div><!-- item3 -->
+                        <div class="swiper-slide list-item">
+                            <a href="#">
+                                <div class="list-img"><img src="./img/theme04.png" class="card-img-top" alt="..."></div>
+                                <div class="list-card rc-card">
+                                    <p class="stit">NIGHT VIEW</p>
+                                    <p class="tit">별빛 야경</p>
+                                    <div class="hastag">
+                                        <p>밤하늘을 수놓는 황홀한 순간을 부산여행가서 즐겨봐요</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div><!-- item4 -->
+                    </div>
+                    <div class="swiper-button-next rc-next"></div>
+                    <div class="swiper-button-prev rc-prev"></div>
+                    <div class="swiper-pagination re-pag"></div>
+                  </div>
+            </div>
+        </div>
+        <!-- e: 추천여행 -->
+
+        <!-- s: 해외여행 -->
+        <div class="cont container">
+            <h2 class="ftrl-tit">버킷리스트,</h2>
+            <h2>고민하지말고 떠나자!</h2>
+            <div class="swiper ftrl">
+                <div class="swiper-wrapper list-bx">
+                    <div class="swiper-slide list-item"><a href="">
+                        <div class="list-img">
+                            <img src="./img/foreign01.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="list-card">
+                            <p class="stit">김포/서울/청주 출발</p>
+                            <p class="tit">오사카 패키지 3박 4일</p>
+                            <div class="hastag">
+                                <p>#교토</p><p>#나라</p><p>#고베</p>
+                            </div>
+                        </div>
+                    </a></div><!-- item1 -->
+                    <div class="swiper-slide list-item"><a href="">
+                        <div class="list-img">
+                            <img src="./img/foreign02.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="list-card">
+                            <p class="stit">서울 출발</p>
+                            <p class="tit">다낭/바나힐/월드체인호텔 3박 5일</p>
+                            <div class="hastag">
+                                <p>#호이안야간투어</p><p>#다낭</p>
+                            </div>
+                        </div>
+                    </a></div><!-- item2 -->
+                    <div class="swiper-slide list-item"><a href="">
+                        <div class="list-img">
+                            <img src="./img/foreign03.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="list-card">
+                            <p class="stit">부산 출발</p>
+                            <p class="tit">보홀직항 4박 6일 &lt;전신마사지&gt;</p>
+                            <div class="hastag">
+                                <p>#필리핀</p><p>#보홀</p><p>#전신마사지</p>
+                            </div>
+                        </div>
+                    </a></div><!-- item3 -->
+                    <div class="swiper-slide list-item"><a href="">
+                        <div class="list-img">
+                            <img src="./img/foreign04.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="list-card">
+                            <p class="stit">부산/대구 출발</p>
+                            <p class="tit">세부 솔레아 4박 5일</p>
+                            <div class="hastag">
+                                <p>#호핑투어</p><p>#솔레아리조트</p>
+                            </div>
+                        </div>
+                    </a></div><!-- item4 -->
+                    <div class="swiper-slide list-item"><a href="">
+                        <div class="list-img">
+                            <img src="./img/foreign05.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="list-card">
+                            <p class="stit">서울 출발</p>
+                            <p class="tit">튀르키예(터키) 일주 8~10일</p>
+                            <div class="hastag">
+                                <p>#이스탄불</p><p>#동굴호텔</p>
+                            </div>
+                        </div>
+                    </a></div><!-- item5 -->
+                </div>
+              </div> 
+        </div>
+        <!-- e: 해외여행 -->
+
+        <!-- s: 해외여행 -->
+        <div class="cont rc-cont-bx">
+            <div class="container fe-tak">
+                <div class="fe-bx">
+                    <h2>축제</h2>
+                    <div class="list-bx">
+                        <div class="list-item"><a href="#">
+                            <div class="list-img">
+                                <img src="./img/festival01.png" class="card-img-top" alt="...">
+                            </div>
+                        </a></div><!-- item1 -->
+                        <div class="list-item"><a href="#">
+                            <div class="list-img">
+                                <img src="./img/festival02.png" class="card-img-top" alt="...">
+                            </div>
+                        </a></div><!-- item1 -->
+                    </div>
+                    
+                </div>
+                <div class="tak-bx">
+                    <div class="tak-tit">
+                        <div class="tak-img"><img src="./img/tit05.png" alt=""></div>
+                        <h2>타임어택</h2>
+                    </div>
+                    <div class="list-bx">
+                        <div class="list-item">
+                            <div class="list-img">
+                                <img src="./img/timek01.png" class="card-img-top" alt="...">
+                            </div>
+                            <div class="list-card"><a href="">
+                                <p class="timeat">
+                                    <span id="daysRemaining1">0</span>일 <span id="timeRemaining1">00:00:00</span>
+                                </p>
+                                <div class="txt">
+                                    <p class="tit">[제주愛명소] - 우도 3일 단독여행 </p>
+                                    <div class="hastag">
+                                        <p>#낭만감성여행지</p><p>#맛있는여행</p>
+                                    </div>
+                                    <p class="price">550,000<span>원 ~</span></p>
+                                </div>
+                                
+                            </div></a>
+                        </div><!-- item1 -->
+                        <div class="list-item">
+                            <div class="list-img">
+                                <img src="./img/timek02.png" class="card-img-top" alt="...">
+                            </div>
+                            <div class="list-card"><a href="">
+                                <p class="timeat">
+                                    <span id="daysRemaining2">0</span>일 <span id="timeRemaining2">00:00:00</span>
+                                </p>
+                                <div class="txt">
+                                    <p class="tit">[동유럽 4국9일] - 체코/오스트리아/헝가리/독일</p>
+                                    <div class="hastag">
+                                        <p>#인솔자동행</p><p>#프라하</p><p>#할슈타트</p>
+                                    </div>
+                                    <p class="price">3,099,000<span>원 ~</span></p>
+                                </div>
+                                
+                            </a></div>
+                        </div>
+                    </div><!-- list-bx -->
+                </div>
+            </div>
+            
+        </div>
+        <!-- e: 해외여행 -->
+         <!-- s : 고객센터 -->
+    <div class="cs-wrap">
+        <div class="container">
+          <div class="cs-inner justify-content-between">
+            <div class="cs-item cs-item1">
+              <h3>Travel Vibes</h3>
+              <div class="txta">
+                <span>1577-1234</span>
+                <div>
+                  <a href="#">자주 찾는 질문</a>
+                </div>
+              </div>
+            </div>
+            <div class="cs-item">
+              <div class="cs-bx mt-3">
+                <p><strong>해외여행문의</strong></p>
+                <p><span>평일/주말 : 09:00-20:00</span></p>
+              </div>
+              <div class="cs-bx mt-3">
+                <p><strong>해외항공권 문의</strong></p>
+                <p><span>1899-0000</span></p>
+                <p><span>평일 : 09:00-17:00</span></p>
+                <p><span>점심시간 : 12:00-13:00</span></p>
+              </div>
+            </div>
+            <div class="cs-item">
+              <div class="cs-bx mt-3">
+                <p><strong>해외여행문의</strong></p>
+                <p><span>평일/주말 : 09:00-20:00</span></p>
+              </div>
+              <div class="cs-bx mt-3">
+                <p><strong>해외항공권 문의</strong></p>
+                <p><span>1899-0000</span></p>
+                <p><span>평일 : 09:00-17:00</span></p>
+                <p><span>점심시간 : 12:00-13:00</span></p>
+              </div>
+            </div>
+            <div class="cs-item">
+              <div class="cs-bx mt-3">
+                <p><strong>해외여행문의</strong></p>
+                <p><span>평일/주말 : 09:00-20:00</span></p>
+              </div>
+              <div class="cs-bx mt-3">
+                <p><strong>해외항공권 문의</strong></p>
+                <p><span>1899-0000</span></p>
+                <p><span>평일 : 09:00-17:00</span></p>
+                <p><span>점심시간 : 12:00-13:00</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- s : 고객센터 -->
+        <footer id="footer"></footer>
+   
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+         <!-- Moment.js 추가 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <!-- Bootstrap Datepicker -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="./common/common.js"></script>
+        <script src="./js/event.js"></script>
+        <script src="./js/script.js"></script>
+        <script>
+            
+        </script>
+    
+</body>
+</html>

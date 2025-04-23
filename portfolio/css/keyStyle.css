@@ -1,0 +1,26 @@
+@keyframes popUp {
+  0% {transform: translateY(20px);opacity: 0;}
+  50% {transform: translateY(-10px);opacity: 1;}
+  100% {transform: translateY(0px);opacity: 1;}
+}
+
+@keyframes shrinkMove {
+  0% {transform: scale(1) translateY(0px);}
+  100% {transform: scale(0.85) translateY(0px);}
+}
+@keyframes fadeInUp {
+  0% {opacity: 0;transform: translateY(20px);}
+  100% {opacity: 1;transform: translateY(0);}
+}
+@keyframes fadeOut {
+  from { opacity: 1;}
+  to {opacity: 0;transform: scale(0.95);}
+}
+@keyframes fadeIn {
+  from {opacity: 0;transform: translateY(10px);}
+  to {opacity: 1;transform: translateY(0);}
+}
+
+@keyframes vanish {
+  to {opacity: 0;transform: scale(0.95);}
+}
